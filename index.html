@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+//vars
+var html = '<p> <div> <label>PhoneNumber</label> <input type="tel" name="phoneNo[]"/><label>Carrier</label> <input type="text" name="carrier[]" /><a href="#" id="remove">Remove Phone Number</a> <div> </p>';
+
+
+
+//add
+$("#add").click(function(){
+    $("#container").append(html);
+});
+
+
+//delete
+$("#container").on('click', '#remove', function(){
+
+    $(this).parent('div').remove();
+
+});
+
+//copy 
+
+    });
+    </script>
+</head>
+<body>
+    <h1>UK phone number validator</h1>
+    <h2>Make sure that there are no spaces before or after a number is entered.<br>
+    The carrier will be left blank if the phone number is not valid. 
+    </h2>
+<form name="register" action="test.php" method="post">
+
+<div id="container">
+    <label>PhoneNumber</label> <input type="tel" name="phoneNo[]" />
+<label>Carrier</label> <input type="text" name="carrier[]" />
+<a href="#" id="add">Add more Phone Numbers</a>
+
+</div>
+
+
+<p><input type="submit" name="submit" value="Submit" /></p>
+<input type="checkbox" name="csv" value="Csv" checked>Do you want a csv file?<br>
+</form>
+
+
+</body>
+</html>
+
